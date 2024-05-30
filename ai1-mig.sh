@@ -42,7 +42,7 @@ step3_download_backup() {
 step4_restore_backup() {
     echo -e "${ORANGE}INFO: Restoring backup...${NC}"
     local filename=$(basename "$URL_TO_DOWNLOAD")
-    wp --allow-root --path="$WP_PATH" ai1wm restore "${WP_PATH}/wp-content/ai1wm-backups/$filename" --yes > /dev/null 2>&1 || return 1
+    wp --allow-root --path="$WP_PATH" ai1wm restore "$filename" --yes > /dev/null 2>&1 || return 1
 }
 
 step5_run_script() {
